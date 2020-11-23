@@ -191,7 +191,10 @@ endif (JANSSON_FOUND)
 
 add_subdirectory(src)
 add_subdirectory(examples)
-add_subdirectory(tests)
+if(NOT AVRO_SKIP_BUILD_TESTS)
+    add_subdirectory(tests)
+endif()
+
 add_subdirectory(docs)
 
 add_custom_target(pretty
